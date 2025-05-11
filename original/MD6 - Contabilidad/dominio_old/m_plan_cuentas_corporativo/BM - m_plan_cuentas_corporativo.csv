@@ -1,0 +1,66 @@
+nombre tabla bm: mpccor1f
+nombre tabla dominio: m_plan_cuentas_corporativo
+nombre tabla stage: m_plan_cuentas_corporativo
+
+unique id, ltrim(rtrim(ejercicio)) + '|' + ltrim(rtrim(codcontab))
+cod_ejercicio|cod_cuenta_contable_corporativa
+
+dbo.func_cas_todatetime(fecultmod,horultimod) lastmodifydate, ejercicio,codcontab,descripcta,ctaabono,ctacargo,case when flgcodauxi = 0x46 then 'F' when flgcodauxi = 0x54 then 'T' end flgcodauxi,naturaleza,flgbalance,flgresult,flgrubro,case when flganalitic = 0x46 then 'F' when flganalitic = 0x54 then 'T' end flganalitic,case when tipoenlace = 0x46 then 'F' when tipoenlace = 0x54 then 'T' end tipoenlace,tipcodauxi,case when flgccosto = 0x46 then 'F' when flgccosto = 0x54 then 'T' end flgccosto,tipomoneda,case when flgundneg = 0x46 then 'F' when flgundneg = 0x54 then 'T' end flgundneg,case when flgsku = 0x46 then 'F' when flgsku = 0x54 then 'T' end flgsku,case when flgmarca = 0x46 then 'F' when flgmarca = 0x54 then 'T' end flgmarca,case when flgcateg = 0x46 then 'F' when flgcateg = 0x54 then 'T' end flgcateg,case when flgcanal = 0x46 then 'F' when flgcanal = 0x54 then 'T' end flgcanal,case when flgorden = 0x46 then 'F' when flgorden = 0x54 then 'T' end flgorden,estado,feccrea,horcrea,usucrea,fecultmod,horultimod,ultusumod
+
+
+cod_ejercicio
+cod_cuenta_contable_corporativa
+desc_cuenta_contable_corporativa
+cod_cuenta_abono
+cod_cuenta_cargo
+tiene_cuenta_auxiliar
+cod_naturaleza
+cod_indicador_balance
+cod_indicador_resultado
+cod_indicador_rubro
+tiene_analitic
+es_enlace
+cod_tipo_cuenta_auxiliar
+tiene_centro_costo
+cod_tipo_moneda
+tiene_unidad_negocio
+tiene_sku
+tiene_marca
+tiene_categoria
+tiene_canal
+tiene_orden
+estado
+fecha_creacion
+usuario_creacion
+fecha_modificacion
+usuario_modificacion
+
+
+ejercicio
+codcontab
+descripcta
+ctaabono
+ctacargo
+case when flgcodauxi = 0x46 then 'F' when flgcodauxi = 0x54 then 'T' end flgcodauxi
+naturaleza
+flgbalance
+flgresult
+flgrubro
+case when flganalitic = 0x46 then 'F' when flganalitic = 0x54 then 'T' end flganalitic
+case when tipoenlace = 0x46 then 'F' when tipoenlace = 0x54 then 'T' end tipoenlace
+tipcodauxi
+case when flgccosto = 0x46 then 'F' when flgccosto = 0x54 then 'T' end flgccosto
+tipomoneda
+case when flgundneg = 0x46 then 'F' when flgundneg = 0x54 then 'T' end flgundneg
+case when flgsku = 0x46 then 'F' when flgsku = 0x54 then 'T' end flgsku
+case when flgmarca = 0x46 then 'F' when flgmarca = 0x54 then 'T' end flgmarca
+case when flgcateg = 0x46 then 'F' when flgcateg = 0x54 then 'T' end flgcateg
+case when flgcanal = 0x46 then 'F' when flgcanal = 0x54 then 'T' end flgcanal
+case when flgorden = 0x46 then 'F' when flgorden = 0x54 then 'T' end flgorden
+estado
+feccrea
+horcrea
+usucrea
+fecultmod
+horultimod
+ultusumod

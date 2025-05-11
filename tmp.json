@@ -1,0 +1,1015 @@
+{
+    "Comment": "A description of my state machine",
+    "StartAt": "dominio 1",
+    "States": {
+      "dominio 1": {
+        "Type": "Parallel",
+        "Branches": [
+          {
+            "StartAt": "m_articulo",
+            "States": {
+              "m_articulo": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_articulo"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_asignacion_modulo",
+            "States": {
+              "m_asignacion_modulo": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_asignacion_modulo"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_clasificacion_cliente",
+            "States": {
+              "m_clasificacion_cliente": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_clasificacion_cliente"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_cliente",
+            "States": {
+              "m_cliente": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_cliente"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_compania",
+            "States": {
+              "m_compania": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_compania"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_eje_territorial",
+            "States": {
+              "m_eje_territorial": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_eje_territorial"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_estructura_comercial",
+            "States": {
+              "m_estructura_comercial": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_estructura_comercial"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_forma_pago",
+            "States": {
+              "m_forma_pago": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_forma_pago"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_fuerza_venta",
+            "States": {
+              "m_fuerza_venta": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_fuerza_venta"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_lista_precio",
+            "States": {
+              "m_lista_precio": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_lista_precio"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_modelo_atencion",
+            "States": {
+              "m_modelo_atencion": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_modelo_atencion"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_modulo",
+            "States": {
+              "m_modulo": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_modulo"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_origen_pedido",
+            "States": {
+              "m_origen_pedido": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_origen_pedido"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_pais",
+            "States": {
+              "m_pais": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_pais"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_responsable_comercial",
+            "States": {
+              "m_responsable_comercial": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_responsable_comercial"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_sucursal",
+            "States": {
+              "m_sucursal": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_sucursal"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_tipo_pedido",
+            "States": {
+              "m_tipo_pedido": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_tipo_pedido"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_tipo_venta",
+            "States": {
+              "m_tipo_venta": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_tipo_venta"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_categoria_compra",
+            "States": {
+              "m_categoria_compra": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_categoria_compra"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_proveedor",
+            "States": {
+              "m_proveedor": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_proveedor"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_unidad_medida_equivalente",
+            "States": {
+              "m_unidad_medida_equivalente": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_unidad_medida_equivalente"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "t_avance_dia",
+            "States": {
+              "t_avance_dia": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-t_avance_dia"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "t_pedido",
+            "States": {
+              "t_pedido": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-t_pedido"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "t_venta",
+            "States": {
+              "t_venta": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-t_venta"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "t_visita",
+            "States": {
+              "t_visita": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-t_visita"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "t_compra_rendimiento",
+            "States": {
+              "t_compra_rendimiento": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-t_compra_rendimiento"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "t_movimiento_inventario",
+            "States": {
+              "t_movimiento_inventario": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-t_movimiento_inventario"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "t_orden_compra_cabecera",
+            "States": {
+              "t_orden_compra_cabecera": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-t_orden_compra_cabecera"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "t_orden_compra_cronograma_entrega",
+            "States": {
+              "t_orden_compra_cronograma_entrega": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-t_orden_compra_cronograma_entrega"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_almacen",
+            "States": {
+              "m_almacen": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_almacen"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_familia_equipo",
+            "States": {
+              "m_familia_equipo": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_familia_equipo"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_formula_fabricacion",
+            "States": {
+              "m_formula_fabricacion": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_formula_fabricacion"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_linea_produccion",
+            "States": {
+              "m_linea_produccion": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_linea_produccion"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "m_turno",
+            "States": {
+              "m_turno": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-m_turno"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "t_orden_produccion",
+            "States": {
+              "t_orden_produccion": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-t_orden_produccion"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "t_orden_produccion_material",
+            "States": {
+              "t_orden_produccion_material": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-t_orden_produccion_material"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "t_saldos_iniciales",
+            "States": {
+              "t_saldos_iniciales": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-t_saldos_iniciales"
+                  }
+                },
+                "End": true
+              }
+            }
+          }
+        ],
+        "Next": "dominio 2",
+        "ResultPath": "$.execute"
+      },
+      "dominio 2": {
+        "Type": "Parallel",
+        "Branches": [
+          {
+            "StartAt": "t_pedido_detalle",
+            "States": {
+              "t_pedido_detalle": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-t_pedido_detalle"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "t_venta_detalle",
+            "States": {
+              "t_venta_detalle": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-t_venta_detalle"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "t_hoja_costos_cabecera",
+            "States": {
+              "t_hoja_costos_cabecera": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-t_hoja_costos_cabecera"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "t_orden_compra_ingreso",
+            "States": {
+              "t_orden_compra_ingreso": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-t_orden_compra_ingreso"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "t_movimiento_inventario_detalle",
+            "States": {
+              "t_movimiento_inventario_detalle": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-t_movimiento_inventario_detalle"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "t_orden_compra_detalle",
+            "States": {
+              "t_orden_compra_detalle": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::states:startExecution.sync:2",
+                "Parameters": {
+                  "StateMachineArn": "arn:aws:states:us-east-2:399723489351:stateMachine:datalake-aje-prd-athenea-base-sm",
+                  "Input": {
+                    "tableList.$": "$.tableList",
+                    "COD_PAIS.$": "$.COD_PAIS",
+                    "PERIODO_INI.$": "$.PERIODO_INI",
+                    "PERIODO_FIN.$": "$.PERIODO_FIN",
+                    "PERIODOS.$": "$.PERIODOS",
+                    "table": "datalake-aje-prd-athenea-dominio-t_orden_compra_detalle"
+                  }
+                },
+                "End": true
+              }
+            }
+          }
+        ],
+        "ResultPath": "$.execute",
+        "Next": "Crawlers lambda"
+      },
+      "Crawlers lambda": {
+        "Type": "Task",
+        "Resource": "arn:aws:states:::lambda:invoke",
+        "OutputPath": "$.Payload",
+        "Parameters": {
+          "FunctionName": "arn:aws:lambda:us-east-2:399723489351:function:datalake-aje-prd-athenea-crawlers-lambda",
+          "Payload": {
+            "CRAWLER_NAME": "datalake-aje-prd-athenea-dominio-comercial-crawler"
+          }
+        },
+        "Retry": [
+          {
+            "ErrorEquals": [
+              "Lambda.ServiceException",
+              "Lambda.AWSLambdaException",
+              "Lambda.SdkClientException",
+              "Lambda.TooManyRequestsException"
+            ],
+            "IntervalSeconds": 1,
+            "MaxAttempts": 3,
+            "BackoffRate": 2
+          }
+        ],
+        "Next": "Valida ejecución concurrente"
+      },
+      "Valida ejecución concurrente": {
+        "Type": "Choice",
+        "Choices": [
+          {
+            "Variable": "$.wait",
+            "BooleanEquals": true,
+            "Next": "Wait"
+          },
+          {
+            "Variable": "$.error",
+            "BooleanEquals": true,
+            "Next": "envio de errores lambda crawlers"
+          },
+          {
+            "Variable": "$.wait",
+            "BooleanEquals": false,
+            "Next": "Inicia Crawler dominio"
+          }
+        ]
+      },
+      "envio de errores lambda crawlers": {
+        "Type": "Task",
+        "Resource": "arn:aws:states:::sns:publish",
+        "Parameters": {
+          "TopicArn": "arn:aws:sns:us-east-2:399723489351:Datalake-ingestion-datalakeingestionajeprdemailsuccededendpointtopic65A3B171-hN2VftNQ2PLd",
+          "Message": {
+            "State machine": "datalake-aje-prd-athenea-dominio-comercial-sm",
+            "Lambda": "datalake-aje-prd-athenea-crawlers-lambda",
+            "Error.$": "$.msg"
+          }
+        },
+        "End": true
+      },
+      "envio de errores ejecución crawler": {
+        "Type": "Task",
+        "Resource": "arn:aws:states:::sns:publish",
+        "Parameters": {
+          "TopicArn": "arn:aws:sns:us-east-2:399723489351:Datalake-ingestion-datalakeingestionajeprdemailsuccededendpointtopic65A3B171-hN2VftNQ2PLd",
+          "Message": {
+            "State machine": "datalake-aje-prd-athenea-dominio-comercial-sm",
+            "Crawler": "datalake-aje-prd-athenea-dominio-comercial-crawler",
+            "Error": "Fallo al ejecutar Crawler de dominio"
+          }
+        },
+        "End": true
+      },
+      "Wait": {
+        "Type": "Wait",
+        "Seconds": 60,
+        "Next": "Crawlers lambda"
+      },
+      "Inicia Crawler dominio": {
+        "Type": "Task",
+        "Parameters": {
+          "Name": "datalake-aje-prd-athenea-dominio-comercial-crawler"
+        },
+        "Resource": "arn:aws:states:::aws-sdk:glue:startCrawler",
+        "End": true,
+        "Catch": [
+          {
+            "ErrorEquals": [
+              "States.ALL"
+            ],
+            "Next": "envio de errores ejecución crawler"
+          }
+        ]
+      }
+    }
+  }

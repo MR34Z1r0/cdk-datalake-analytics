@@ -1,0 +1,59 @@
+- External:
+    - configuracion_ebitda_centro_costo_plan_cuenta
+    - configuracion_cds
+    - configuracion_ebitda_centro_costo
+    - configuracion_ebitda_plan_cuenta_no_considerada
+    - configuracion_ebitda_plan_cuenta
+    - dim_tipo_gasto_cds
+- Stage:
+    - m_area: bareaf
+    - m_compania: ok
+    - m_pais: ok
+    - m_centro_costo: tccost1f
+    - m_centro_costo_corporativo: coccost1f
+    - m_clasificacion_cogs: clacogs
+    - m_clasificacion_cuenta_contable_cogs: ctacogs
+    - m_gerencia: bgeren1f
+    - m_periodo: mperct1f
+    - m_plan_cuentas: mplcta1f
+    - m_plan_cuentas_corporativo: mpccor1f
+    - t_voucher_cabecera: tvouch1f
+    - t_voucher_detalle: tvouch2f
+    - t_voucher_eliminados: tvouch6f
+- Dominio:
+    - m_centro_costo:
+        - m_gerencia
+        - m_area
+        - m_centro_costo
+        - m_centro_costo_corporativo
+        - configuracion_ebitda_centro_costo
+    - m_cuenta_contable:
+        - m_cuenta_contable (m_plan_cuentas)
+        - m_cuenta_contable_corporativo
+        - m_clasificacion_cogs
+        - m_clasificacion_cuenta_contable_cogs
+        - configuracion_ebitda_plan_cuenta
+        - configuracion_ebitda_plan_cuenta_no_considerada
+    - m_periodo_contable:
+        - m_periodo
+    - t_movimiento_contable
+        - t_voucher_cabecera
+        - t_voucher_detalle
+        - t_voucher_eliminados
+        - configuracion_cds
+- Cadena:
+    - dim_centro_costo:
+        - m_centro_costo (new)
+    - dim_cuenta_contable:
+        - m_plan_cuentas (new)
+    - dim_clasificacion_pl:
+        - configuracion_ebitda_centro_costo_plan_cuenta
+    - dim_periodo_contable
+        - m_periodo_contable
+    - dim_tipo_gasto_CDS
+        - dim_tipo_gasto_cds
+    - fact_saldo_contable_centro_costo:
+        - t_movimiento_contable
+
+
+

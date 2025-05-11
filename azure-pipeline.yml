@@ -1,0 +1,101 @@
+trigger: 
+  branches:
+    include:
+      - dev
+    exclude:
+      - develop
+      - feature/*
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  - group: data-platform-unacem-library-dev
+
+stages:
+  - stage: ManualApproval
+    jobs:
+      - job: WaitForManualApproval
+        pool: server
+        steps:
+          - task: ManualValidation@0
+            timeoutInMinutes: 120
+            inputs:
+              notifyUsers: |
+                carlos.anampa@unacemgbs.com
+                alfredo.tarazona@tuxpas.com
+              instructions: 'Please approve the deployment of UNACEM stack to proceed.'
+              timeoutInMinutes: 60  
+              onTimeout: 'reject' 
+            displayName: 'Waiting for manual approval'
+
+  - stage: DeployStack
+    dependsOn: ManualApproval
+    condition: succeeded('ManualApproval')  
+    jobs:
+      - job: DeployJob
+        steps:
+
+          - task: UsePythonVersion@0
+            inputs:
+              versionSpec: '3.x'  
+            displayName: 'Using python 3'
+
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '16.x'
+            displayName: 'Installing Node.js'
+
+          - script: |
+              sudo npm install -g aws-cdk
+            displayName: 'Installing AWS CDK'
+
+          - script: |
+              python -m venv .venv
+              source .venv/bin/activate
+              pip install --upgrade pip
+              pip install -r requirements.txt
+            displayName: 'Installing python dependencies'
+
+          - script: |
+              export PROJECT_NAME=$(PROJECT_NAME)
+              export TAGS_PROJECT_NAME=$(TAGS_PROJECT_NAME)
+              export ENVIRONMENT=$(ENVIRONMENT)
+              export AWS_ACCOUNT=$(AWS_ACCOUNT)
+              export REGION=$(REGION)
+              export DEFAULT_OWNER=$(DEFAULT_OWNER)
+              export TECH_OWNER=$(TECH_OWNER)
+              export PROJECT_ID=$(PROJECT_ID)
+              export PROJECT_VPC=$(PROJECT_VPC)
+              export PROJECT_SECURITY_GROUP=$(PROJECT_SECURITY_GROUP)
+              export REPLICATION_INSTANCE_CLASS=$(REPLICATION_INSTANCE_CLASS)
+              export SUBNET_GROUP=$(SUBNET_GROUP)
+              export SAP_SUBNET=$(SAP_SUBNET)
+              export DMS_ENGINE_VERSION=$(DMS_ENGINE_VERSION)
+              export BUSSINESS_UNIT=$(BUSSINESS_UNIT)
+              export SALESFORCE_APPFLOW_CONNECTION=$(SALESFORCE_APPFLOW_CONNECTION)
+              export CONFIGURATION_TABLE_ARN=$(CONFIGURATION_TABLE_ARN)
+              export ENDPOINT_TABLE_ARN=$(ENDPOINT_TABLE_ARN)
+              export LOGS_TABLE_ARN=$(LOGS_TABLE_ARN)
+              export LOGS_QUALITY_TABLE_ARN=$(LOGS_QUALITY_TABLE_ARN)
+              export STAGE_COLUMNS_TABLE_ARN=$(STAGE_COLUMNS_TABLE_ARN)
+              export ANALYTICS_STEP_FUNCTION_ARN=$(ANALYTICS_STEP_FUNCTION_ARN)
+            displayName: 'Exporting variables to env'
+
+          - script: |
+              echo $AWS_ACCOUNT
+              echo $REGION
+            displayName: 'Checking environment variables key.'
+
+          - task: AWSShellScript@1
+            inputs:
+              awsCredentials: 'dev-data-platform-aws'
+              regionName: us-east-1
+              scriptType: 'inline'
+              inlineScript: |
+                source .venv/bin/activate
+                cdk deploy --all --require-approval never
+              disableAutoCwd: true
+              workingDirectory: '$(System.DefaultWorkingDirectory)'
+              failOnStandardError: false
+            displayName: 'Deploy CDK Stacks'

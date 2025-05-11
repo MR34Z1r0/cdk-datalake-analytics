@@ -1,0 +1,62 @@
+nombre tabla bm: mplcta1f
+nombre tabla dominio: m_plan_cuentas
+nombre tabla stage: m_plan_cuentas
+
+unique id, ltrim(rtrim(compania)) + '|' + ltrim(rtrim(ejercicio)) + '|' + ltrim(rtrim(codcontab))
+cod_compania|cod_ejercicio|cod_cuenta_contable
+
+dbo.func_cas_todatetime(fecultmod,horultimod) lastmodifydate, compania,ejercicio,codcontab,descripcta,tipocuenta,tipomoneda,naturaleza,flgbalance,flgresult,case when flgccosto = 0x46 then 'F' when flgccosto = 0x54 then 'T' end flgccosto,case when flgcodauxi = 0x46 then 'F' when flgcodauxi = 0x54 then 'T' end flgcodauxi,tipcodauxi,case when flgifrs = 0x46 then 'F' when flgifrs = 0x54 then 'T' end flgifrs,ctactbcorp,descripctacorp,flgtipres,feccrea,horcrea,usucrea,fecultmod,horultimod,ultusumod
+
+
+
+
+cod_compania
+cod_ejercicio
+cod_cuenta_contable
+desc_cuenta_contable
+cod_tipo_cuenta
+tipo_moneda
+cod_naturaleza
+cod_indicador_balance
+cod_indicador_resultado
+tiene_centro_costo
+tiene_cuenta_auxiliar
+cod_tipo_cuenta_auxiliar
+tiene_ifrs
+cod_cuenta_contable_corp
+desc_cuenta_contable_corp
+flg_tipres
+fecha_creacion
+hora_creacion
+usuario_creacion
+fecha_modificacion
+hora_modificacion
+usuario_modificacion
+
+compania
+ejercicio
+codcontab
+descripcta
+tipocuenta
+tipomoneda
+naturaleza
+flgbalance
+flgresult
+case when flgccosto = 0x46 then 'F' when flgccosto = 0x54 then 'T' end flgccosto
+case when flgcodauxi = 0x46 then 'F' when flgcodauxi = 0x54 then 'T' end flgcodauxi
+tipcodauxi
+case when flgifrs = 0x46 then 'F' when flgifrs = 0x54 then 'T' end flgifrs
+ctactbcorp
+descripctacorp
+flgtipres
+feccrea
+horcrea
+usucrea
+fecultmod
+horultimod
+ultusumod
+
+
+
+
+

@@ -1,0 +1,210 @@
+{
+    "rules": [
+        {
+            "rule-type": "selection",
+            "rule-id": "1",
+            "rule-name": "1",
+            "object-locator": {
+                "schema-name": "dbo",
+                "table-name": "ipa"
+            },
+            "rule-action": "include"
+        },
+        {
+            "rule-type": "selection",
+            "rule-id": "2",
+            "rule-name": "1",
+            "object-locator": {
+                "schema-name": "dbo",
+                "table-name": "ode"
+            },
+            "rule-action": "include"
+        },
+        {
+            "rule-type": "selection",
+            "rule-id": "222",
+            "rule-name": "1",
+            "object-locator": {
+                "schema-name": "dbo",
+                "table-name": "vobr_neg"
+            },
+            "rule-action": "include"
+        },
+        {
+            "rule-type": "selection",
+            "rule-id": "223",
+            "rule-name": "1",
+            "object-locator": {
+                "schema-name": "dbo",
+                "table-name": "pob"
+            },
+            "rule-action": "include"
+        },
+        {
+            "rule-type": "selection",
+            "rule-id": "224",
+            "rule-name": "1",
+            "object-locator": {
+                "schema-name": "dbo",
+                "table-name": "pedlog"
+            },
+            "rule-action": "include"
+        },
+        {
+            "rule-type": "selection",
+            "rule-id": "225",
+            "rule-name": "1",
+            "object-locator": {
+                "schema-name": "dbo",
+                "table-name": "emp_mcdo"
+            },
+            "rule-action": "include"
+        },
+        {
+            "rule-type": "selection",
+            "rule-id": "226",
+            "rule-name": "1",
+            "object-locator": {
+                "schema-name": "dbo",
+                "table-name": "grpper"
+            },
+            "rule-action": "include"
+        },
+        {
+            "rule-type": "selection",
+            "rule-id": "3",
+            "rule-name": "1",
+            "object-locator": {
+                "schema-name": "dbo",
+                "table-name": "pal"
+            },
+            "rule-action": "include"
+        },
+        {
+            "rule-type": "selection",
+            "rule-id": "30",
+            "rule-name": "1",
+            "object-locator": {
+                "schema-name": "dbo",
+                "table-name": "ped"
+            },
+            "rule-action": "include"
+        },
+        {
+            "rule-type": "table-settings",
+            "rule-id": "40",
+            "rule-name": "3",
+            "object-locator": {
+                "schema-name": "dbo",
+                "table-name": "ipa"
+            },
+            "parallel-load": {
+                "type": "partitions-auto"
+            }
+        },
+        {
+            "rule-type": "table-settings",
+            "rule-id": "41",
+            "rule-name": "3",
+            "object-locator": {
+                "schema-name": "dbo",
+                "table-name": "ode"
+            },
+            "parallel-load": {
+                "type": "partitions-auto"
+            }
+        },
+        {
+            "rule-type": "table-settings",
+            "rule-id": "42",
+            "rule-name": "3",
+            "object-locator": {
+                "schema-name": "dbo",
+                "table-name": "pal"
+            },
+            "parallel-load": {
+                "type": "partitions-auto"
+            }
+        },
+        {
+            "rule-type": "table-settings",
+            "rule-id": "421",
+            "rule-name": "3",
+            "object-locator": {
+                "schema-name": "dbo",
+                "table-name": "ped"
+            },
+            "parallel-load": {
+                "type": "partitions-auto"
+            }
+        },
+        {
+            "rule-type": "transformation",
+            "rule-id": "6",
+            "rule-name": "3",
+            "rule-action": "convert-lowercase",
+            "rule-target": "table",
+            "object-locator": {
+                "schema-name": "dbo",
+                "table-name": "%"
+            }
+        },
+        {
+            "rule-type": "transformation",
+            "rule-id": "7",
+            "rule-name": "3",
+            "rule-action": "add-column",
+            "rule-target": "column",
+            "object-locator": {
+                "schema-name": "dbo",
+                "table-name": "%"
+            },
+            "value": "stage_ind",
+            "expression": "'N'",
+            "data-type": {
+                "type": "string",
+                "length": 10
+            }
+        },
+        {
+            "rule-type": "transformation",
+            "rule-id": "6984",
+            "rule-name": "3",
+            "rule-action": "convert-lowercase",
+            "rule-target": "column",
+            "object-locator": {
+                "schema-name": "%",
+                "table-name": "%",
+                "column-name": "%"
+            }
+        },
+        {
+            "rule-type": "transformation",
+            "rule-id": "70",
+            "rule-name": "70",
+            "rule-target": "column",
+            "object-locator": {
+                "schema-name": "dbo",
+                "table-name": "%"
+            },
+            "rule-action": "add-column",
+            "value": "last_updated",
+            "expression": "datetime()",
+            "old-value": null,
+            "data-type": {
+                "type": "datetime"
+            }
+        },
+        {
+            "rule-type": "transformation",
+            "rule-id": "8",
+            "rule-name": "2",
+            "rule-action": "rename",
+            "rule-target": "schema",
+            "object-locator": {
+                "schema-name": "dbo"
+            },
+            "value": "unicon_sqlserver_stage"
+        }
+    ]
+}

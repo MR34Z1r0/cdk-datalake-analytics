@@ -1,0 +1,3 @@
+PAIS;TABLA_STAGE;ESQUEMA;TABLA_REDSHIFT;PERIODOS;PROCESS_ID;TIPO_TABLA;IS_PRINCIPAL
+VE;T_DOCUMENTO_VENTA;big_magic_incoming_venezuela_2;t_historico_venta;1;10;T;NO
+VE;M_ARTICULO;big_magic_incoming_venezuela_2;m_articulo;;10;M;NO

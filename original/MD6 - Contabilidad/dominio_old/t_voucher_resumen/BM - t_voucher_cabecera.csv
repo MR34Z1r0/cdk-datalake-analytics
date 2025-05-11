@@ -1,0 +1,56 @@
+nombre tabla bm: tvouch1f
+nombre tabla dominio: t_voucher_cabecera
+nombre tabla stage: t_voucher_cabecera
+
+unique id, ltrim(rtrim(compania)) + '|' + ltrim(rtrim(sucursal)) + '|' + ltrim(rtrim(ejercicio)) + '|' + ltrim(rtrim(periodoctb)) + '|' + ltrim(rtrim(asiento)) + '|' + ltrim(rtrim(CAST(CAST(comprobant AS BIGINT) AS VARCHAR(30))))
+cod_compania|cod_sucursal|cod_ejercicio|cod_periodo|asiento|nro_comprobante
+
+
+dbo.func_cas_todatetime(fecultmod,horultimod) lastmodifydate, compania,sucursal,ejercicio,periodoctb,asiento,CAST(CAST(comprobant AS BIGINT) AS VARCHAR(30)) comprobant,moneda,fecha,nota1,nota2,totdebe,tothaber,stsvoucher,feccontab,usucrea,feccrea,horcrea,ultusumod,fecultmod,horultimod
+
+CAST(CAST(comprobant AS BIGINT) AS VARCHAR(30)) comprobant,
+
+cod_compania
+cod_sucursal
+cod_ejercicio
+cod_periodo
+asiento
+nro_comprobante
+cod_moneda
+fecha
+nota1
+nota2
+total_debe
+total_haber
+estado_voucher
+fecha_contable
+usuario_creacion
+fecha_creacion
+hora_creacion
+usuario_modificacion
+fecha_modificacion
+hora_modificacion
+
+
+compania
+sucursal
+ejercicio
+periodoctb
+asiento
+comprobant
+moneda
+fecha
+nota1
+nota2
+totdebe
+tothaber
+stsvoucher
+feccontab
+usucrea
+feccrea
+horcrea
+ultusumod
+fecultmod
+horultimod
+
+
