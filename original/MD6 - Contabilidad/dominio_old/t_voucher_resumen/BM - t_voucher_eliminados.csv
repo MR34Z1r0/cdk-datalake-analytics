@@ -1,0 +1,38 @@
+nombre tabla bm: tvouch6f
+nombre tabla dominio: t_voucher_eliminados
+nombre tabla stage: t_voucher_eliminados
+
+unique id, ltrim(rtrim(compania)) + '|' + ltrim(rtrim(sucursal)) + '|' + ltrim(rtrim(ejercicio)) + '|' + ltrim(rtrim(periodoctb)) + '|' + ltrim(rtrim(asiento)) + '|' + ltrim(rtrim(comprobant))
+cod_compania|cod_sucursal|cod_ejercicio|cod_periodo|asiento|nro_comprobante
+
+
+
+dbo.func_cas_todatetime(ultfecmod,ulthormod) lastmodifydate, compania,sucursal,ejercicio,periodoctb,asiento,CAST(CAST(comprobant AS BIGINT) AS VARCHAR(30)) comprobant,fechavouc,usucrea,feccrea,horcrea,ultusumod,ultfecmod,ulthormod
+
+cod_compania
+cod_sucursal
+cod_ejercicio
+cod_periodo
+asiento
+nro_comprobante
+fecha
+usuario_creacion
+fecha_creacion
+hora_creacion
+usuario_modificacion
+fecha_modificacion
+hora_modificacion
+
+compania
+sucursal
+ejercicio
+periodoctb
+asiento
+CAST(CAST(comprobant AS BIGINT) AS VARCHAR(30)) comprobant
+fechavouc
+usucrea
+feccrea
+horcrea
+ultusumod
+ultfecmod
+ulthormod

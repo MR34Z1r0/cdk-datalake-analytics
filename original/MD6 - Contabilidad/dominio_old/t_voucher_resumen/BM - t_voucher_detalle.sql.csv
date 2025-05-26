@@ -1,0 +1,99 @@
+nombre tabla bm: tvouch2f t2
+nombre tabla dominio: t_voucher_detalle
+nombre tabla stage: t_voucher_detalle
+join_expr, inner join dbo.tvouch1f(nolock) t on t.compania = t2.compania and t.sucursal = t2.sucursal and t.ejercicio = t2.ejercicio and t.periodoctb = t2.periodoctb and t.asiento = t2.asiento and t.comprobant = t2.comprobant
+
+unique id, ltrim(rtrim(t2.compania)) + '|' + ltrim(rtrim(t2.sucursal)) + '|' + ltrim(rtrim(t2.ejercicio)) + '|' + ltrim(rtrim(t2.periodoctb)) + '|' + ltrim(rtrim(t2.asiento)) + '|' + ltrim(rtrim(t2.comprobant)) + '|' + ltrim(rtrim(t2.lineavou)) + '|' + ltrim(rtrim(t2.ctaautomat))
+cod_compania|cod_sucursal|cod_ejercicio|cod_periodo|asiento|nro_comprobante|linea_voucher|cta_automatica
+
+id_voucher_cabecera: compania,sucursal,ejercicio,periodoctb,asiento,comprobant
+
+dbo.func_cas_todatetime(fecultmod,horultimod) lastmodifydate, t2.compania compania,t2.sucursal sucursal,t2.ejercicio ejercicio,t2.periodoctb periodoctb,t2.asiento asiento,t2.comprobant comprobant,t2.lineavou lineavou,t2.ctaautomat ctaautomat,t2.fecvocher fecvocher,t2.codcontab codcontab,t2.naturaleza naturaleza,t2.tipodoc tipodoc,t2.tipocambio tipocambio,t2.impsol impsol,t2.impdolar impdolar,t2.glosa glosa,t2.codauxilia codauxilia,t2.vounser vounser,t2.vounnum vounnum,t2.transrefer transrefer,t2.nrodocref nrodocref,t2.centrocost centrocost,t2.ciadoc ciadoc,t2.sucdoc sucdoc,t2.intercom intercom,t2.codauxper codauxper,t2.nroregistr nroregistr,t2.fecoper fecoper,t2.tipodocref tipodocref,t2.voundocref voundocref,t2.usucrea usucrea,t2.feccrea feccrea,t2.horcrea horcrea,t2.ultusumod ultusumod,t2.fecultmod fecultmod,t2.horultimod horultimod
+
+
+cod_compania
+cod_sucursal
+cod_ejercicio
+cod_periodo
+asiento
+nro_comprobante
+linea_voucher
+cta_automatica
+fecha_voucher
+cod_contable
+naturaleza
+tipo_documento
+tipo_cambio
+importe_sol --importe_mn
+importe_dolar --importe_me
+glosa
+codigo_auxiliar
+nro_serie
+nro_documento
+transferencia_refencia
+nro_documento_referencia
+cod_centro_costo
+cod_moneda     -- no existe
+cod_compania_doc
+cod_sucursal_doc
+nota1 -- no existe
+nota2 -- no existe
+tipo_creacion -- no existe
+intercom
+cod_auxiliar_persona
+nro_registro
+fecha_operacion
+tipo_documento_ref
+documento_ref 
+usuario_creacion
+fecha_creacion
+hora_creacion
+usuario_modificacion
+fecha_modificacion
+hora_modificacion
+
+
+compania
+sucursal
+ejercicio
+periodoctb
+asiento
+comprobant
+lineavou
+ctaautomat
+fecvocher
+codcontab
+naturaleza
+tipodoc
+tipocambio
+impsol
+impdolar
+glosa
+codauxilia
+vounser
+vounnum
+transrefer
+nrodocref
+centrocost
+moneda  -- no existe
+ciadoc
+sucdoc
+nota1   -- no existe
+nota2   -- no existe
+tipcreacio  -- no existe
+intercom
+codauxper
+nroregistr
+fecoper
+tipodocref
+voundocref
+usucrea
+feccrea
+horcrea
+ultusumod
+fecultmod
+horultimod
+
+
+
+

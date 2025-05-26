@@ -1,0 +1,53 @@
+nombre tabla bm: tccost1f
+nombre tabla dominio: m_centro_costo
+nombre tabla stage: m_centro_costo
+
+unique id, ltrim(rtrim(compania)) + '|' + ltrim(rtrim(centrocost)) + '|' + ltrim(rtrim(ejercicio))
+cod_compania|cod_centro_costo|cod_ejercicio
+
+
+cod_compania,cod_centro_costo,cod_ejercicio,nombre,cod_area,cod_gerencia,tipo,tipo_almacen,estado,cod_centro_costo_corp,nombre_corp
+fecha_creacion,hora_creacion,usuario_creacion,fecha_modificacion,hora_modificacion,usuario_modificacion
+
+compania,centrocost,ejercicio,nombre,area,gerencia,flgtipo,tipalmacen,estado,ccostcorp,nombrecorp,
+feccrea,horcrea,usucrea,fecultmod,horultimod,ultusumod
+
+
+dbo.func_cas_todatetime(fecultmod,horultimod) lastmodifydate, compania,centrocost,ejercicio,nombre,area,gerencia,flgtipo,tipalmacen,estado,ccostcorp,nombrecorp,feccrea,horcrea,usucrea,fecultmod,horultimod,ultusumod
+
+cod_compania
+cod_centro_costo
+cod_ejercicio
+nombre
+cod_area
+cod_gerencia
+tipo
+tipo_almacen
+estado
+cod_centro_costo_corp
+nombre_corp
+fecha_creacion
+hora_creacion
+usuario_creacion
+fecha_modificacion
+hora_modificacion
+usuario_modificacion
+
+
+compania
+centrocost
+ejercicio
+nombre
+area
+gerencia
+flgtipo
+tipalmacen
+estado
+ccostcorp
+nombrecorp
+feccrea
+horcrea
+usucrea
+fecultmod
+horultimod
+ultusumod
